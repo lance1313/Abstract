@@ -1,4 +1,4 @@
-package ctec.controller;
+package ctec.model;
 
 public abstract class Game
 {

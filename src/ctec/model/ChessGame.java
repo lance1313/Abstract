@@ -1,4 +1,5 @@
-package ctec.controller;
+package ctec.model;
+
 
 public class ChessGame extends Game 
 {
