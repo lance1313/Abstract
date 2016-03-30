@@ -1,6 +1,6 @@
 package ctec.model;
 
-public abstract class Game
+public abstract class Game implements PlayingTheGame
 {
 // game-> ball game-> 
 	//board game-> numOfPlayers, hasBoard,  hasRules
