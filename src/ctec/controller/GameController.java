@@ -2,6 +2,7 @@ package ctec.controller;
 import java.util.ArrayList;
 
 import ctec.model.*;
+import ctec.view.GamePanel;
 
 /**
  * 
@@ -11,16 +12,27 @@ import ctec.model.*;
 public class GameController 
 {
 	private ArrayList<PlayingTheGame> PlayingGame;
+	private GamePanel panel;
 
-	public  void start()
+	public GameController()
 	{
-		
+		//build components
+		makePlayingList();
+		//build view
 		
 	}
+	
 	public void makePlayingList()
 	{
 		PlayingGame.add(new RiskGame());
 		PlayingGame.add(new ChessGame());
 	}
+	
+	public  void start()
+	{
+		
+		
+	}
 
 }
+
