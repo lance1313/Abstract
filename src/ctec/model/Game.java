@@ -1,6 +1,11 @@
 package ctec.model;
 
-public abstract class Game implements PlayingTheGame
+/**
+ * implements scomparible interface.
+ * @author jlin3312
+ *
+ */
+public abstract class Game implements PlayingTheGame,Comparable
 {
 // game-> ball game-> 
 	//board game-> numOfPlayers, hasBoard,  hasRules
@@ -33,6 +38,15 @@ public abstract class Game implements PlayingTheGame
 	public void setHasRules(boolean hasRules) 
 	{
 		this.hasRules = hasRules;
+	}
+	
+	/**
+	 * inherited to ll other classes to prevent  repetition in code.
+	 */
+	public String toString()
+	{
+		String description = "This is a" + this.getClass().getName() + "and has a " + currentLeader();
+		return description;
 	}
 
 }

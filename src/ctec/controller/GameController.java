@@ -3,6 +3,11 @@ import java.util.ArrayList;
 
 import ctec.model.*;
 
+/**
+ * 
+ * @author jlin3312
+ *
+ */
 public class GameController 
 {
 	private ArrayList<PlayingTheGame> PlayingGame;
