@@ -33,6 +33,26 @@ public class GameController
 		
 		
 	}
+	
+	private void swap(int firstLocation, int secondLocation)
+	{
+		PlayingTheGame temp = PlayingGame.get(secondLocation);
+		PlayingGame.set(firstLocation, PlayingGame.get(secondLocation));
+		PlayingGame.set(secondLocation, temp); 
+	}
+	
+	public void insertionSort()
+	{
+		for(int outerLoop = 1; outerLoop < PlayingGame.size(); outerLoop++)
+		{
+			int innerLoop = outerLoop;
+			while(innerLoop > 0 && (PlayingGame.get(innerLoop-1).compareTo(PlayingGame.get(innerLoop)) > 0))
+			{
+				swap(innerLoop,innerLoop-1);
+				innerLoop--;
+				
+			}
+		}
+	}
 
 }
-
