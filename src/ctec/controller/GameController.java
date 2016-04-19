@@ -6,7 +6,7 @@ import ctec.view.GamePanel;
 
 /**
  * 
- * @author jlin3312
+ * @author Jacob
  *
  */
 public class GameController 
@@ -54,5 +54,46 @@ public class GameController
 			}
 		}
 	}
+	
+	public void quickSort(int low,int high)
+	{
+		if(low < high )
+		{
+			int midPoint = partition(low,high);
+			quickSort(low,midPoint-1);
+			quickSort(midPoint+1,high);
+			
+		}
+	}
+	
+	/*
+	 * pivot := A[hi]
+    i := lo        // place for swapping
+    for j := lo to hi – 1 do
+        if A[j] ≤ pivot then
+            swap A[i] with A[j]
+            i := i + 1
+    swap A[i] with A[hi]
+	 */
+	private int partition(int low,int high)
+	{
+		
+		
+		int position = low;
+		PlayingTheGame pivot = PlayingGame.get(high);
+		
+		for(int spot = low; spot < high-1;spot++)
+		{
+			if(PlayingGame.get(spot).compareTo(pivot) <= 0 )
+			{
+				swap(position,spot);
+				position++;
+			}
+		}
+		swap(position,high);
+		
+		return position;
+	}
+			
 
 }

@@ -1,8 +1,8 @@
 package ctec.model;
 
 /**
- * implements scomparible interface.
- * @author jlin3312
+ * implements comparable interface.
+ * @author jacob
  *
  */
 public abstract class Game implements PlayingTheGame,Comparable
