@@ -8,16 +8,18 @@ import javax.swing.*;
 
 import org.w3c.dom.css.Rect;
 
+import ctec.controller.GameController;
+
 public class GamePanel extends JPanel
 {
-	
+	private GameController baseController;
 	public JButton listButton;
-	public JTextArea displayPane;
+	public JTextArea textArea;
 	
 	public GamePanel()
 	{
 		listButton = new JButton("Press for abstract list");
-		displayPane = new JTextArea(10,25);
+		textArea = new JTextArea(10,25);
 		
 		setupPanel();
 		setupLayout();
@@ -26,11 +28,11 @@ public class GamePanel extends JPanel
 	
 	public void setupPanel()
 	{
-		this.add(displayPane);
+		this.add(textArea);
 		this.add(listButton);
 		this.setBackground(Color.CYAN);
 		this.setSize(500, 500);
-		this.setSize(getSize());		
+		this.setSize(getSize());	
 	}
 	
 	public void setupLayout()
@@ -45,11 +47,10 @@ public class GamePanel extends JPanel
 			
 			public void actionPerformed(ActionEvent click)
 			{
-				if(PlayingGame insatceOf)
-				{
-					
-				}
 				
+				baseController.insertionSort();
+				
+				textArea.setText(baseController.showGameList());
 			}
 		});
 		

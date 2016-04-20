@@ -4,10 +4,11 @@ package ctec.controller;
 
 public class GameRunner 
 {
-	GameController controller = new GameController();
 	
-	public void main(String[] args)
+	
+	public static  void main(String[] args)
 	{
+		 GameController controller = new GameController();
 		controller.start();
 	}
 

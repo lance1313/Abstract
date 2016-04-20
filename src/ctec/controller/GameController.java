@@ -2,6 +2,7 @@ package ctec.controller;
 import java.util.ArrayList;
 
 import ctec.model.*;
+import ctec.view.GameFrame;
 import ctec.view.GamePanel;
 
 /**
@@ -13,11 +14,15 @@ public class GameController
 {
 	private ArrayList<PlayingTheGame> PlayingGame;
 	private GamePanel panel;
+	private GameFrame frame;
 
 	public GameController()
 	{
 		//build components
+		this.PlayingGame = new ArrayList<PlayingTheGame>();
 		makePlayingList();
+		panel = new GamePanel();
+		frame = new GameFrame();
 		//build view
 		
 	}
@@ -33,6 +38,18 @@ public class GameController
 		
 		
 	}
+	public String showGameList()
+	{
+		String list = "";
+		for(PlayingTheGame currentGame : PlayingGame)
+		{
+			 list.concat("this is a " + currentGame.toString() +  " the leader is " + currentGame.currentLeader() +"\n");
+		}
+		
+		return list;
+		
+	}
+	
 	
 	private void swap(int firstLocation, int secondLocation)
 	{
